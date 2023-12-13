@@ -50,3 +50,9 @@ TagManager:
   - name: FirstPlan
     uniqueID: 3466330129
     locked: 0
+  - name: BaseScene
+    uniqueID: 1817864031
+    locked: 0
+  - name: Player
+    uniqueID: 854233713
+    locked: 0
