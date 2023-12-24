@@ -59,6 +59,12 @@ TagManager:
   - name: Player
     uniqueID: 854233713
     locked: 0
-  - name: BaseScene
+  - name: BaseBackground
     uniqueID: 1817864031
+    locked: 0
+  - name: Spikes
+    uniqueID: 3117070109
+    locked: 0
+  - name: BaseForeground
+    uniqueID: 109492829
     locked: 0
