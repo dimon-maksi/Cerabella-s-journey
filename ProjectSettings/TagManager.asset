@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Trap
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -12,8 +13,8 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
+  - Player
+  - Enemy
   - 
   - 
   - 
@@ -62,6 +63,9 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 854233713
+    locked: 0
+  - name: Enemy
+    uniqueID: 3814423819
     locked: 0
   - name: BaseBackground
     uniqueID: 1817864031
