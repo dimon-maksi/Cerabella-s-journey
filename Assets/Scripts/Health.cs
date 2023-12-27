@@ -6,14 +6,23 @@ namespace DefaultNamespace
     public class Health : MonoBehaviour
     {
         private Animator anim;
-        
+        private Rigidbody2D rb;
+
         public int MaxHealth;
         public int CurrentHealth;
 
         private void Start()
         {
+            rb= GetComponent<Rigidbody2D>();
             anim = GetComponent<Animator>();
             CurrentHealth = MaxHealth;
+        }
+        private void OnCollisionEnter2D(Collision2D collision)
+        {
+            if (collision.gameObject.CompareTag("Trap"))
+            {
+                TakeDamage(999);
+            }
         }
 
         public void TakeDamage(int Amount)
@@ -21,10 +30,13 @@ namespace DefaultNamespace
             CurrentHealth -= Amount;
             if (CurrentHealth <= 0)
             {
-                anim.SetBool("IsDeath", true);
+                anim.SetTrigger("death");
+                rb.bodyType = RigidbodyType2D.Static;
                 Invoke("TeleportPlayerToSpawnpoint", 2f);
             }
         }
+
+        
         
         private void TeleportPlayerToSpawnpoint()
         {
