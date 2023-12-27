@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace DefaultNamespace
 {
@@ -30,14 +31,19 @@ namespace DefaultNamespace
             CurrentHealth -= Amount;
             if (CurrentHealth <= 0)
             {
-                anim.SetTrigger("death");
                 rb.bodyType = RigidbodyType2D.Static;
-                Invoke("TeleportPlayerToSpawnpoint", 2f);
+                anim.SetTrigger("death");
+                RestartLevel();
+                //Invoke("TeleportPlayerToSpawnpoint", 2f);
             }
         }
 
-        
-        
+        private void RestartLevel()
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
+
+
         private void TeleportPlayerToSpawnpoint()
         {
             // Змініть цей рядок, щоб отримати посилання на гравця або інший об'єкт, який атакується
