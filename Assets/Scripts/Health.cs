@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace DefaultNamespace
 {
@@ -32,8 +33,13 @@ namespace DefaultNamespace
             {
                 anim.SetTrigger("death");
                 rb.bodyType = RigidbodyType2D.Static;
-                Invoke("TeleportPlayerToSpawnpoint", 2f);
+                //Invoke("TeleportPlayerToSpawnpoint", 2f);
             }
+        }
+
+        private void RestartLevel()
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
 
         
