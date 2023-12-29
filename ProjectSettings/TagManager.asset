@@ -58,8 +58,14 @@ TagManager:
   - name: CreepersFirstPlan
     uniqueID: 3487364725
     locked: 0
+  - name: BaseForeground
+    uniqueID: 109492829
+    locked: 0
   - name: Platform
     uniqueID: 2434402975
+    locked: 0
+  - name: BaseBackground
+    uniqueID: 1817864031
     locked: 0
   - name: Player
     uniqueID: 854233713
@@ -67,12 +73,6 @@ TagManager:
   - name: Enemy
     uniqueID: 2215264163
     locked: 0
-  - name: BaseBackground
-    uniqueID: 1817864031
-    locked: 0
   - name: Spikes
     uniqueID: 3117070109
-    locked: 0
-  - name: BaseForeground
-    uniqueID: 109492829
     locked: 0
