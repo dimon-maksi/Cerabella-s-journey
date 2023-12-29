@@ -35,7 +35,7 @@ namespace DefaultNamespace.Enemy
             }
         }
 
-        private bool PlayerInSight()
+        public bool PlayerInSight()
         {
             RaycastHit2D hit =
                 Physics2D.BoxCast(
