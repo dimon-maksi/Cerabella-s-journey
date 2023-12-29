@@ -9,15 +9,24 @@ namespace DefaultNamespace
         private Animator anim;
         private Rigidbody2D rb;
 
+        
         public int MaxHealth;
         public int CurrentHealth;
+        [SerializeField] HealthBarBehaviour healthBar;
+
+        private void Awake()
+        {
+            rb = GetComponent<Rigidbody2D>();
+            anim = GetComponent<Animator>();
+            healthBar = GetComponentInChildren<HealthBarBehaviour>();
+        }
 
         private void Start()
         {
-            rb= GetComponent<Rigidbody2D>();
-            anim = GetComponent<Animator>();
             CurrentHealth = MaxHealth;
+            healthBar.UpdateHealthBar((float)CurrentHealth,(float)MaxHealth);
         }
+
         private void OnCollisionEnter2D(Collision2D collision)
         {
             if (collision.gameObject.CompareTag("Trap"))
@@ -29,6 +38,7 @@ namespace DefaultNamespace
         public void TakeDamage(int Amount)
         {
             CurrentHealth -= Amount;
+            healthBar.UpdateHealthBar((float)CurrentHealth, (float)MaxHealth);
             if (CurrentHealth <= 0)
             {
                 anim.SetTrigger("death");
