@@ -22,7 +22,7 @@ namespace DefaultNamespace
         {
             if (collision.gameObject.CompareTag("Trap"))
             {
-                TakeDamage(999);
+                TakeDamage(MaxHealth);
             }
         }
 
