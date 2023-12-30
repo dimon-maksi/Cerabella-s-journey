@@ -38,6 +38,10 @@ namespace DefaultNamespace
         public void TakeDamage(int Amount)
         {
             CurrentHealth -= Amount;
+            if (CurrentHealth > 0) 
+            {
+                anim.SetTrigger("hurt");
+            }
             healthBar.UpdateHealthBar((float)CurrentHealth, (float)MaxHealth);
             if (CurrentHealth <= 0)
             {
