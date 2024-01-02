@@ -56,16 +56,19 @@ namespace DefaultNamespace
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
 
-        
-        
-        private void TeleportPlayerToSpawnpoint()
+        private void DestroyEmeny()
+        {
+            Destroy(gameObject);
+        }
+
+        /*private void TeleportPlayerToSpawnpoint()
         {
             GameObject playerObject = GameObject.FindGameObjectWithTag("Player");
 
             if (playerObject != null)
             {
                 playerObject.transform.position = new Vector3(-0.81f, 0.19f, 0f);
-        
+
                 Health playerHealth = playerObject.GetComponent<Health>();
                 if (playerHealth != null)
                 {
@@ -73,6 +76,6 @@ namespace DefaultNamespace
                     CurrentHealth = MaxHealth;
                 }
             }
-        }
+        }*/
     }
 }

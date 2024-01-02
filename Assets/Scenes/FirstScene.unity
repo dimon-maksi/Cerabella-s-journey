@@ -20961,10 +20961,11 @@ GameObject:
   - component: {fileID: 1407280489}
   - component: {fileID: 1407280488}
   - component: {fileID: 1407280487}
+  - component: {fileID: 1407280492}
   - component: {fileID: 1407280484}
   - component: {fileID: 1407280485}
   - component: {fileID: 1407280491}
-  - component: {fileID: 1407280492}
+  - component: {fileID: 1407280493}
   m_Layer: 7
   m_Name: Player
   m_TagString: Player
@@ -21117,7 +21118,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 394a3eadb1504720945afd45738c6499, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHealth: 5
+  MaxHealth: 100
   CurrentHealth: 0
   healthBar: {fileID: 718295218}
 --- !u!70 &1407280492
@@ -21155,6 +21156,27 @@ CapsuleCollider2D:
   m_Offset: {x: -0.05445409, y: 1.396962}
   m_Size: {x: 1.6998906, y: 2.5262353}
   m_Direction: 0
+--- !u!114 &1407280493
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1407280483}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc22e59d39dcd344ebc036be8acc9d33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AttackCooldown: 1
+  Damage: 2
+  Range: 1.8
+  EnemyLayer:
+    serializedVersion: 2
+    m_Bits: 256
+  anim: {fileID: 1407280484}
+  capsuleCollider: {fileID: 1407280492}
+  ColliderDistance: 0.86
 --- !u!1 &1421368386
 GameObject:
   m_ObjectHideFlags: 0
