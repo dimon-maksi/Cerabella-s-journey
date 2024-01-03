@@ -41,7 +41,7 @@ public class PlayerAttack : MonoBehaviour
     private void DamageEnemy()
     {
         Collider2D[] colliders = Physics2D.OverlapBoxAll(
-            capsuleCollider.bounds.center + transform.right * Range * transform.localScale.x * ColliderDistance * FindDirection(), 
+            capsuleCollider.bounds.center + transform.right * Range * transform.localScale.x * ColliderDistance * (sprite.flipX? -1 : 1), 
             new Vector2(capsuleCollider.bounds.size.x * Range, capsuleCollider.bounds.size.y),
             0,EnemyLayer);
         foreach (Collider2D collider in colliders)
@@ -57,17 +57,7 @@ public class PlayerAttack : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawWireCube(capsuleCollider.bounds.center + transform.right * Range * transform.localScale.x * ColliderDistance * FindDirection(),
+        Gizmos.DrawWireCube(capsuleCollider.bounds.center + transform.right * Range * transform.localScale.x * ColliderDistance * (sprite.flipX? -1 : 1),
             new Vector3(capsuleCollider.bounds.size.x * Range, capsuleCollider.bounds.size.y, capsuleCollider.bounds.size.z));
-    }
-
-    private float FindDirection()
-    {
-        if (sprite.flipX)
-        {
-            return -1;
-        }
-
-        return 1;
     }
 }
