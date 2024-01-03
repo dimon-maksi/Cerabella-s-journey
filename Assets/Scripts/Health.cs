@@ -50,7 +50,21 @@ namespace DefaultNamespace
                 //Invoke("TeleportPlayerToSpawnpoint", 2f);
             }
         }
+        public void FreezeEnemies()
+        {
+            GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
 
+            foreach (GameObject enemy in enemies)
+            {
+                Animator animator = enemy.GetComponent<Animator>();
+                if (animator != null) 
+                    animator.enabled = false;
+
+                /*Rigidbody2D rigidbody = enemy.GetComponent<Rigidbody2D>();
+                if (rigidbody != null) 
+                    rigidbody.simulated = false;*/
+            }
+        }
         private void RestartLevel()
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
