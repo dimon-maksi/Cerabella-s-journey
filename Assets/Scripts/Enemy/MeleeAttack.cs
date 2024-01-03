@@ -30,7 +30,7 @@ namespace DefaultNamespace.Enemy
                 if (cooldownTimer >= AttackCooldown)
                 {
                     cooldownTimer = 0;
-                    anim.SetTrigger("Attack1");
+                    anim.SetTrigger("attack");
                 }
             }
         }
