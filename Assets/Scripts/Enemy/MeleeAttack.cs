@@ -64,7 +64,6 @@ namespace DefaultNamespace.Enemy
         {
             if (PlayerInSight())
             {
-                // Отримати всі об'єкти, які перетинаються з областю атаки
                 Collider2D[] colliders = Physics2D.OverlapBoxAll(
                     capsuleCollider.bounds.center + transform.right * Range * transform.localScale.x * ColliderDistance,
                     new Vector2(capsuleCollider.bounds.size.x * Range, capsuleCollider.bounds.size.y),
@@ -72,11 +71,9 @@ namespace DefaultNamespace.Enemy
 
                 foreach (Collider2D collider in colliders)
                 {
-                    // Перевірити, чи знайдено гравця серед об'єктів
                     Health playerHealth = collider.GetComponent<Health>();
                     if (playerHealth != null)
                     {
-                        // Завдати шкоди гравцеві за допомогою метода TakeDamage
                         playerHealth.TakeDamage(Damage);
                     }
                 }
